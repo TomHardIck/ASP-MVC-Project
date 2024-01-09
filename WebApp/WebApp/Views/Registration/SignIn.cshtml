@@ -10,11 +10,13 @@
     <title>Вход в систему</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <script src="https://kit.fontawesome.com/891579e448.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <link rel="stylesheet" href="/css/authpage.css" />
 </head>
 <!-- partial:index.partial.html -->
 <body class="align">
     <div class="grid">
+        <partial name="_Notification" />
         <form asp-antiforgery="true" asp-action="SignIn" asp-controller="Registration" method="post" class="form login">
             <div class="form__field">
                 <label for="login__username"><i class="fa-solid fa-phone"></i><span class="hidden">Username</span></label>

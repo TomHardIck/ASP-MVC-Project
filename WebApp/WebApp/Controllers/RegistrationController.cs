@@ -45,6 +45,8 @@ namespace WebApp.Controllers
             user.Identical_Number = random.Next(11111, 99999).ToString();
             db.Users.Add(user);
             await db.SaveChangesAsync();
+            TempData["message"] = "Вы успешно зарегистрированы!";
+            TempData["type"] = "Success";
             return RedirectToAction("SignIn");
         }
 
@@ -75,6 +77,8 @@ namespace WebApp.Controllers
                 {
                     HttpContext.Session.SetString("AuthUser", model.PhoneNumber);
                     await Authenticate(model.PhoneNumber);
+                    TempData["message"] = "Добро пожаловать в систему!";
+                    TempData["type"] = "Success";
                     return RedirectToAction("UserPage", "Home");
                 }
                 if (user != null && user.RoleId.Equals(db.UserRoles.FirstOrDefaultAsync(x => x.RoleName.Equals("Администратор")).Result.IdRole))
@@ -85,7 +89,9 @@ namespace WebApp.Controllers
                     return RedirectToAction("AdminPage", "Home");
                 }
             }
-            return RedirectToAction("SignIn", "Home");
+            TempData["message"] = "Введены неверные данные!";
+            TempData["type"] = "Error";
+            return RedirectToAction("SignIn");
         }
     }
 }
