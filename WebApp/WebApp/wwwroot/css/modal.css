@@ -1,0 +1,43 @@
+﻿.modal {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px black solid;
+    background: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -150px;
+    display: none;
+    z-index: 5;
+    padding: 20px 10px;
+}
+
+    .modal .modal-close {
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        display: block;
+        stroke: black;
+    }
+
+.overlay {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.6;
+    display: none;
+}
+
+    .modal.shown,
+    .overlay.shown {
+        display: block;
+    }

@@ -1,0 +1,46 @@
+﻿@model Package;
+
+<div class="modal fade bd-example-modal-lg" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Изменение посылки</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="EditPackage" asp-controller="Home" class="form-horizontal" method="POST" id="editingForm">
+                    <input type="hidden" name="IdPackage" id="IdPackage" asp-for="@Model.IdPackage" />
+                    <input type="hidden" name="IsFinished" id="IsFinished" asp-for="@Model.IsFinished" />
+                    <input type="hidden" name="TypeDelivery" id="TypeDelivery" asp-for="@Model.TypeDelivery" />
+                    <input type="hidden" name="TrackNumber" id="TrackNumber" asp-for="@Model.TrackNumber" />
+                    <div class="form-group">
+                        <label for="PackageName" class="col-form-label">Название посылки:</label>
+                        <input type="text" name="PackageName" id="PackageName" class="form-control" asp-for="@Model.PackageName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductArt" class="col-form-label">Артикул товара:</label>
+                        <input type="text" name="ProductArt" asp-for="@Model.ProductArt" id="ProductArt" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductLink" class="col-form-label">Ссылка на товар:</label>
+                        <input type="text" name="ProductLink" asp-for="@Model.ProductLink" id="ProductLink" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductCount" class="col-form-label">Кол-во товара:</label>
+                        <input type="text" name="ProductCount" asp-for="@Model.ProductCount" id="ProductCount" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductPrice" class="col-form-label">Цена товара:</label>
+                        <input type="text" name="ProductPrice" asp-for="@Model.ProductPrice" id="ProductPrice" class="form-control" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button type="submit" form="editingForm" class="btn btn-primary" data-save="modal">Подтвердить изменение</button>
+            </div>
+        </div>
+    </div>
+</div>

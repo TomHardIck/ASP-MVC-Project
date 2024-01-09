@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html style="background: #2c3338;">
+    <head>
+        <title>Личный кабинет</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/891579e448.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/userpage.css" />
+    </head>
+    <body>
+        <div class="header">
+            <div class="side-nav">
+                <ul class="nav-links">
+                    <li><a asp-action="UserPage" asp-controller="Home"><i class="fa-solid fa-user"></i><p>Мой аккаунт</p></a></li>
+                    <li><a asp-action="PackagesWindow" asp-controller="Home"><i class="fa-solid fa-box"></i><p>Добавить посылку</p></a></li>
+                    <li><a href="#"><i class="fa-solid fa-desktop"></i><p>Техника</p></a></li>
+                    <li><a href="#"><i class="fa-solid fa-comments-dollar"></i><p>Узнать курс валюты</p></a></li>
+                    <div class="active"></div>
+                </ul>
+            </div>
+            <div class="my-account">
+                <div class="user-data" style="height: 100vh;">
+                    <h1 style="padding-top: 60px;">Мой аккаунт</h1>
+                    <div class="changePassword">
+                        <form class="form">
+                            <div class="form-group">
+                                <label class="col-form-label" for="link" style="color: white;">Ссылка на Telegram</label>
+                                <input type="text" class="form-control" id="link" name="link" />
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="pass" style="color: white;">Введите текущий пароль</label>
+                                <input type="text" class="form-control" id="pass" name="pass"/>
+                             </div>
+                        </form>
+                    </div>
+                    <h1>Связаться с нами</h1>
+                    <div class="footer" style="display: flex; justify-content: space-evenly;">
+                        <a href="https://t.me/u2ulogistic" class="icon tg"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://vk.com/im?media=&sel=-223387104" class="icon vk"><i class="fa-brands fa-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

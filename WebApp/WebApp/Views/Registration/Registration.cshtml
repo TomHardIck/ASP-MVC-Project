@@ -1,0 +1,46 @@
+﻿@model User
+@{
+    Layout = null;
+    ViewBag.Title = "Регистрация";
+}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <script src="https://kit.fontawesome.com/891579e448.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="/css/authpage.css">
+    </head>
+
+<body class="align">
+    <div class="grid">
+        <form asp-antiforgery="true" asp-action="Registration" asp-controller="Registration" method="post" class="form login">
+            <div class="form__field">
+                <label for="login__username"><i class="fa-solid fa-phone"></i><span class="hidden">Username</span></label>
+                <input asp-for="@Model.PhoneNumber" name="PhoneNumber" id="phone" type="text" class="form__input" placeholder="Номер телефона" required>
+                <span asp-validation-for="PhoneNumber"></span>
+            </div>
+            <div class="form__field">
+                <label for="login__password"><i class="fa-solid fa-lock"></i><span class="hidden">Password</span></label>
+                <input asp-for="@Model.Password" type="password" name="Password" class="form__input" placeholder="Пароль" required>
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="form__field">
+                <label for="login__telegram"><i class="fa-brands fa-telegram"></i><span class="hidden">Telegram</span></label>
+                <input asp-for="@Model.TgLink" type="text" name="TgLink" class="form__input" placeholder="Ссылка на Telegram" required>
+                <span asp-validation-for="TgLink"></span>
+            </div>
+            <div class="form__field">
+                <input type="submit" value="Зарегистрироваться">
+            </div>
+            <div class="form__field">
+                <input type="checkbox" id="checkbox" required/>
+                <label for="checkbox" style="color: white; background: transparent;">Согласен(-сна) на обработку моих персональных данных</label>
+            </div>
+        </form>
+        <p class="text--center">Уже есть аккаунт? <a asp-controller="Registration" asp-action="SignIn">Войти в систему</a></p>
+    </div>
+</body>
+</html>
+
