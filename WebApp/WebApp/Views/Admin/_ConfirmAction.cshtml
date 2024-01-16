@@ -1,0 +1,32 @@
+﻿@model Package
+
+
+<div class="modal fade bd-example-modal-lg" id="confirmAction" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Подтверждение действия</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="EditStatus" asp-controller="Admin" class="form-horizontal" method="POST" id="editingForm">
+                    <input type="hidden" name="IdPackage" id="IdPackage" asp-for="@Model.IdPackage" />
+                    <input type="hidden" name="IsFinished" id="IsFinished" asp-for="@Model.IsFinished" />
+                    <input type="hidden" name="TypeDelivery" id="TypeDelivery" asp-for="@Model.TypeDelivery" />
+                    <input type="hidden" name="TrackNumber" id="TrackNumber" asp-for="@Model.TrackNumber" />
+                    <input type="hidden" name="PackageName" id="PackageName" class="form-control" asp-for="@Model.PackageName" />
+                    <input type="hidden" name="ProductArt" asp-for="@Model.ProductArt" id="ProductArt" class="form-control" />
+                    <input type="hidden" name="ProductLink" asp-for="@Model.ProductLink" id="ProductLink" class="form-control" />
+                    <input type="hidden" name="ProductCount" asp-for="@Model.ProductCount" id="ProductCount" class="form-control" />
+                    <input type="hidden" name="ProductPrice" asp-for="@Model.ProductPrice" id="ProductPrice" class="form-control" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button type="submit" form="editingForm" class="btn btn-primary" data-save="modal">Подтвердить изменение статуса</button>
+            </div>
+        </div>
+    </div>
+</div>

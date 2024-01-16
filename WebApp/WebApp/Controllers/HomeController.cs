@@ -47,20 +47,6 @@ namespace WebApp.Controllers
         }
 
 
-
-        [Route("AdminPage")]
-        public IActionResult AdminPage()
-        {
-            if (HttpContext.Session.GetString("AuthUser") != null && HttpContext.Session.Keys.Contains("Admin"))
-            {
-                return View();
-            }
-            TempData["message"] = "Необходимо авторизоваться в системе!";
-            TempData["type"] = "Error";
-            return RedirectToAction("SignIn", "Registration");
-        }
-
-
         [HttpGet]
         [Route("AddPackage")]
         public IActionResult Create()

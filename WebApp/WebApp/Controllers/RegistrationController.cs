@@ -25,7 +25,7 @@ namespace WebApp.Controllers
         private async Task Authenticate(string userPhone)
         {
             var claim = new List<Claim> { new Claim(ClaimsIdentity.DefaultNameClaimType, userPhone) };
-            ClaimsIdentity id = new ClaimsIdentity(claim, "ApplicationCobokie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            ClaimsIdentity id = new ClaimsIdentity(claim, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
 
@@ -56,7 +56,7 @@ namespace WebApp.Controllers
         {
             if (HttpContext.Session.Keys.Contains("AuthUser") && HttpContext.Session.Keys.Contains("Admin"))
             {
-                return RedirectToAction("AdminPage", "Home");
+                return RedirectToAction("AdminPage", "Admin");
             }
             if (HttpContext.Session.Keys.Contains("AuthUser") && !HttpContext.Session.Keys.Contains("Admin"))
             {
@@ -86,7 +86,7 @@ namespace WebApp.Controllers
                     HttpContext.Session.SetString("AuthUser", model.PhoneNumber);
                     HttpContext.Session.SetString("Admin", "True");
                     await Authenticate(model.PhoneNumber);
-                    return RedirectToAction("AdminPage", "Home");
+                    return RedirectToAction("AdminPage", "Admin");
                 }
             }
             TempData["message"] = "Введены неверные данные!";

@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ruslan\Desktop\ЗАКАЗЫ\САЙТ КРИВЧ\WebApp\WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ruslan/Desktop/ЗАКАЗЫ/САЙТ КРИВЧ/WebApp/WebApp/Views/Home/AdminPage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pblBhZ2UuY3NodG1s
+[C:/Users/ruslan/Desktop/ЗАКАЗЫ/САЙТ КРИВЧ/WebApp/WebApp/Views/Admin/AdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruslan/Desktop/ЗАКАЗЫ/САЙТ КРИВЧ/WebApp/WebApp/Views/Admin/SetCurrency.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0Q3VycmVuY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ruslan/Desktop/ЗАКАЗЫ/САЙТ КРИВЧ/WebApp/WebApp/Views/Admin/_ConfirmAction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX0NvbmZpcm1BY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ruslan/Desktop/ЗАКАЗЫ/САЙТ КРИВЧ/WebApp/WebApp/Views/Home/EditPackage.cshtml]
